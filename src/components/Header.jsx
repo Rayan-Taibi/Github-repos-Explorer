@@ -10,7 +10,7 @@ export default function Header() {
           <div className='bg-black p-2 text-white'>
             <Terminal className='w-5 h-5 md:w-6 md:h-6'/>
           </div>    
-            <h1 className='text-lg md:text-2xl font-bold text-black'>
+            <h1 className='text-xl md:text-3xl font-bold text-black'>
               <span className='hidden sm:inline'>GH_EXPLORER</span>
               <span className='sm:hidden'>GH_EX</span>
               <span className='text-[#FF00FF]'>.EXE</span> 
