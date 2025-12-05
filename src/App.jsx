@@ -5,7 +5,7 @@ import Search from './components/Search.jsx'
 import Content from './components/Content.jsx'
 
 function App() {
-  const [username , setUsername] = React.useState('');
+  const [username , setUsername] = React.useState('Rayan-Taibi');
   const [error , setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [repos, setRepos] = React.useState([]);
@@ -41,14 +41,19 @@ function App() {
       setLoading(false);
     }
     
-  
+  }
   return (
     <>
       <Header/>
       <Search username={username} setUsername={setUsername} fetchRepos={fetchRepos} loading={loading} />
-      <Content/>
+      <Content
+      userInfo={userInfo}
+        repos={repos}
+        loading={loading}
+        error={error}
+      />
     </>
   )
  }
-}
+
 export default App
