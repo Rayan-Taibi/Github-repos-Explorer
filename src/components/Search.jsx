@@ -11,6 +11,7 @@ export default function Search({username, setUsername, fetchRepos,loading}) {
             <input 
             type="text"
             value={username}
+            onKeyPress={(e) =>e.key === 'Enter' && fetchRepos() }
             onChange={(e) => setUsername(e.target.value)}
              placeholder="USER NAME HERE ..." 
              className="flex-1 h-14 md:h-16 px-4 border-4 border-black bg-white text-lg md:text-xl font-bold placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF00FF] transition-all"

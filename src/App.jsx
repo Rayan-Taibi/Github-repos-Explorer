@@ -11,7 +11,7 @@ function App() {
   const [repos, setRepos] = React.useState([]);
   const [userInfo , setUserInfo] = React.useState(null);
 
-  const fetchRepos = async () => {
+  const fetchRepos = async () => { 
     if(!username.trim()){
       setError("ENTER A VALID USERNAME");
       
