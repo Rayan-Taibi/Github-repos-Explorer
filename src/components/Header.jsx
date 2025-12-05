@@ -19,7 +19,7 @@ export default function Header() {
         <div className="flex items-center gap-3 md:gap-6 md:mr-24">
            
             <div className="flex gap-1.5 md:gap-2">
-            <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-[#FF5D5D]"></div>
+            <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-[#ef2525]"></div>
             <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-[#FFBD2E]"></div>
             <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-[#28C840]"></div>
           </div>
