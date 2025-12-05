@@ -16,7 +16,7 @@ export default function Content({userInfo, repos, loading, error}) {
   return (
    <>
     {userInfo && 
-      <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 animate-in slide-in-from-bottom-10 fade-in duration-500 max-w-6xl mx-auto px-4 py-6 bg-[#FFFDF5]'>
+      <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 animate-in slide-in-from-bottom-10 fade-in duration-500 max-w-7xl mx-auto px-4 py-6 bg-[#FFFDF5]'>
         {/* Left Section - User Info */}
         <div className="lg:col-span-4">
           <div className="bg-white border-4 border-black p-6 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sticky top-24">
