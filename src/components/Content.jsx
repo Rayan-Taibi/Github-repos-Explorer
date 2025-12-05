@@ -1,9 +1,16 @@
 import React from 'react'
-import { Github } from 'lucide-react';
+import { Github , Calendar ,MapPin , LinkIcon } from 'lucide-react';
 
 export default function Content({userInfo, repos, loading, error}) {
   
   
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }).toUpperCase();
+  };
 
   
   return (
@@ -25,11 +32,34 @@ export default function Content({userInfo, repos, loading, error}) {
             <a 
             href={userInfo.html_url}
             className=' text-lg font-bold text-[#FF00FF]'
-
             >
               @{userInfo.login}
             </a>
-          </div>
+            {userInfo.bio &&
+            <div className='bg-[#F3F4F6] p-3 border-2 mb-6 border-black text-lg font-bold'>
+              "{userInfo.bio}"
+            </div>}  
+             <div className="space-y-3 font-bold text-lg">
+                  {userInfo.location && (
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-5 h-5" />
+                      {userInfo.location.toUpperCase()}
+                    </div>
+                  )}
+                  {userInfo.blog && (
+                    <div className="flex items-center gap-2">
+                      <LinkIcon className="w-5 h-5" />
+                      <a href={userInfo.blog} className="hover:bg-[#A3E635] truncate">
+                        {userInfo.blog}
+                      </a>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 ">
+                    <Calendar className="w-5 h-5" />
+                    JOINED: {formatDate(userInfo.created_at)}
+                  </div>
+                </div>
+         </div>
         </div>
       </div>}
 
