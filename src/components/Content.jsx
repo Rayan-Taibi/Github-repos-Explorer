@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github , Calendar ,MapPin , LinkIcon ,Code } from 'lucide-react';
+import { Github , Calendar ,MapPin , LinkIcon ,Code , ExternalLink , GitFork , Star} from 'lucide-react';
 
 export default function Content({userInfo, repos, loading, error}) {
   
@@ -81,9 +81,52 @@ export default function Content({userInfo, repos, loading, error}) {
            <div className="bg-black text-white p-4 border-4 border-black mb-6 flex justify-between items-center shadow-[4px_4px_0px_0px_#A3E635]">
                 <h3 className="text-xl font-black uppercase">Repository_Index</h3>
                 <Code className="w-6 h-6" />
+           </div> 
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {repos.map((repo , index) =>(
+              <div
+               key={repo.id}
+               className='group bg-white border-black border-4 p-4 hover:shadow-[8px_8px_0px_0px_#00E0FF] hover:translate-x-1 hover:translate-y-1 transition-all duration-200 flex flex-col'
+               >
+                <div className='flex justify-between items-start'>
+                  <h4 className=' font-black text-xl leading-tight group-hover:text-[#00E0FF] transition-colors break-all'>
+                    {index + 1}. {repo.name}
+                  </h4>
+                  <a
+                        href={repo.html_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black text-white p-1 hover:bg-[#00E0FF] hover:text-black transition-colors"
+                  >
+                        <ExternalLink className="w-6 h-6" />
+                  </a>
+                </div>
+                <p className='text-lg font-bold text-gray-600 mb-4 flex-grow line-clamp-3'>
+                    {repo.description ? repo.description : "No description provided."}
+                </p>
+                <div className="flex items-center justify-between text-s font-black pt-3 border-t-2 border-black mt-auto">
+                      <div className="flex gap-3">
+                        <span className="flex items-center gap-1 bg-[#FFBD2E] px-1 border border-black">
+                          <Star className="w-3 h-3" /> {repo.stargazers_count}
+                        </span>
+                        <span className="flex items-center gap-1 bg-[#F3F4F6] px-1 border border-black">
+                          <GitFork className="w-3 h-3" /> {repo.forks_count}
+                        </span>
+                      </div>
+                      
+                      {repo.language && (
+                        <span className="bg-[#FF90E8] px-2 py-0.5 border border-black uppercase">
+                          {repo.language}
+                        </span>
+                      )}
+                 </div>
+
+              </div>
+            ))}
+              
            </div>
-        </div>
-           
+        
+        </div>   
       </div>}
 
 

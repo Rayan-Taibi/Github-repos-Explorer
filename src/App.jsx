@@ -5,7 +5,7 @@ import Search from './components/Search.jsx'
 import Content from './components/Content.jsx'
 
 function App() {
-  const [username , setUsername] = React.useState('Rayan-Taibi');
+  const [username , setUsername] = React.useState('');
   const [error , setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [repos, setRepos] = React.useState([]);
