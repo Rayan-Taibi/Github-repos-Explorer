@@ -24,7 +24,11 @@ export default function Header() {
             <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-black bg-[#28C840]"></div>
           </div>
           <div className="text-black hover:text-gray-600 cursor-pointer">
-               <Github className='w-8 h-8 md:w-12 md:h-12'/>
+               <Github 
+               onClick={() => window.open('https://github.com/Rayan-Taibi/Github-repos-Explorer')}
+               target='_blank'
+               className='w-8 h-8 md:w-12 md:h-12'
+               />
            </div>
         </div>
        </div>
