@@ -40,6 +40,7 @@ function App() {
     }finally{
       setLoading(false);
     }
+    setUsername('');
     
   }
   return (
