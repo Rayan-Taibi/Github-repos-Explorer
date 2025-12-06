@@ -133,10 +133,11 @@ export default function Content({userInfo, repos, loading, error}) {
 
 
     {/* Placeholder Content Section */}
-      {!userInfo && !loading && !error && <div className="max-w-6xl mx-auto px-4 py-12">
+      {!userInfo && !loading && !error && 
+      <div className="max-w-6xl mx-auto px-4 py-12 animate-pulse ">
         <div className="border-4 border-gray-400 border-dashed p-6 md:p-12 text-center bg-gray-50 w-full flex flex-col items-center justify-center min-h-96">
           <div className="font-black text-2xl md:text-4xl mb-4 md:mb-6 text-gray-400">WAITING FOR INPUT...</div>
-          <Github className="w-16 h-16 md:w-24 md:h-24 text-gray-400" />
+          <Github className="w-16 h-16 md:w-24 md:h-24 text-gray-400 animate-bounce" />
         </div>
       </div>}
       
