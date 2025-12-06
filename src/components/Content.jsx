@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github , Calendar ,MapPin , LinkIcon ,Code , ExternalLink , GitFork , Star} from 'lucide-react';
+import { Github , Calendar ,MapPin , LinkIcon ,Code , ExternalLink , GitFork , Star , AlertTriangle} from 'lucide-react';
 
 export default function Content({userInfo, repos, loading, error}) {
   
@@ -15,6 +15,7 @@ export default function Content({userInfo, repos, loading, error}) {
   
   return (
    <>
+        
     {userInfo && 
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 animate-in slide-in-from-bottom-10 fade-in duration-500 max-w-7xl mx-auto px-4 py-6 bg-[#FFFDF5]'>
         {/* Left Section - User Info */}
@@ -132,7 +133,7 @@ export default function Content({userInfo, repos, loading, error}) {
 
 
     {/* Placeholder Content Section */}
-      {!userInfo && <div className="max-w-6xl mx-auto px-4 py-12">
+      {!userInfo && !loading && !error && <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="border-4 border-gray-400 border-dashed p-6 md:p-12 text-center bg-gray-50 w-full flex flex-col items-center justify-center min-h-96">
           <div className="font-black text-2xl md:text-4xl mb-4 md:mb-6 text-gray-400">WAITING FOR INPUT...</div>
           <Github className="w-16 h-16 md:w-24 md:h-24 text-gray-400" />

@@ -1,6 +1,6 @@
 import React from 'react'
-
-export default function Search({username, setUsername, fetchRepos,loading}) {
+import { AlertTriangle } from 'lucide-react';
+export default function Search({username, setUsername, fetchRepos,loading , error}) {
   return (
     <>
      <div className="max-w-6xl mx-auto px-4 py-6">
@@ -25,7 +25,14 @@ export default function Search({username, setUsername, fetchRepos,loading}) {
           </div>
         </div>
       </div>
+       {error && (
+        <div className="bg-[#FF5D5D] border-4 border-black p-4 md:p-6 mb-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex justify-center items-start md:items-center gap-3 md:gap-4 animate-bounce">
+          <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-black" />
+          <span className="font-black text-base md:text-xl uppercase break-words">{error}</span>
+        </div>
+      )}
     </div>
+       
     </>
   )
 }

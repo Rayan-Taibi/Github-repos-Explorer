@@ -46,7 +46,13 @@ function App() {
   return (
     <>
       <Header/>
-      <Search username={username} setUsername={setUsername} fetchRepos={fetchRepos} loading={loading} />
+      <Search
+       username={username} 
+       setUsername={setUsername} 
+       fetchRepos={fetchRepos} 
+       loading={loading}
+       error={error}
+        />
       <Content
       userInfo={userInfo}
         repos={repos}
